@@ -1,1 +1,1 @@
-docker build -t bitcoin .
+docker build -t zcash .

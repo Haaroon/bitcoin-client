@@ -1,1 +1,1 @@
-docker exec -ti bitcoin bash
+docker exec -ti zcash bash

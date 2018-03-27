@@ -1,37 +1,17 @@
 FROM debian:8
-LABEL maintainer="mihai.bartha@ait.ac.at"
+LABEL maintainer="Haaroon M. Yousaf (h.yousaf [at] ucl.ac.uk)"
 
 ################## BEGIN INSTALLATION ######################
-RUN apt-get update && apt-get install -y build-essential \
-    wget \
-    git \
-    automake \
-    autotools-dev \
-    bsdmainutils \
-    libboost-chrono-dev \
-    libboost-filesystem-dev \
-    libboost-program-options-dev \
-    libboost-system-dev \
-    libboost-test-dev \
-    libboost-thread-dev \
-    libevent-dev \
-    libminiupnpc-dev \
-    libprotobuf-dev \
-    libssl-dev \
-    libtool \
-    libzmq3-dev \
-    pkg-config \
-    protobuf-compiler
+RUN apt-get update && apt-get install -y wget apt-transport-https
 
-RUN mkdir -p /root/.bitcoin
-ADD docker/bitcoin.conf /root/.bitcoin/bitcoin.conf
+RUN wget -qO - https://apt.z.cash/zcash.asc | apt-key add -
+RUN echo "deb [arch=amd64] https://apt.z.cash/ jessie main" | tee /etc/apt/sources.list.d/zcash.list
+RUN apt-get update && apt-get -y install zcash
+RUN mkdir -p /root/.zcash
+RUN zcash-fetch-params
+ADD docker/zcash.conf /root/.zcash/zcash.conf
 
-ADD docker/Makefile /root/Makefile
-RUN cd /root; make install
+VOLUME ["/root/.zcash"]
+EXPOSE 8331
 
-VOLUME ["/root/.bitcoin"]
-EXPOSE 8332
-
-CMD bitcoind -daemon -rest && bash
-
-##################### INSTALLATION END #####################
+CMD zcashd -daemon -rest -conf=/root/.zcash/zcash.conf && bash

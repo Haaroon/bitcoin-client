@@ -1,6 +1,6 @@
-# Bitcoin Docker container
+# ZCash Docker container
 
-A Docker container running Bitcoin as a service and exposing the REST API.
+A Docker container running ZCash as a service and exposing the REST API.
 
 ## Prerequisites
 
@@ -10,8 +10,8 @@ Install [Docker][docker], e.g. on Debian/Ubuntu based systems
 
 ## Configuration
 
-Modify `docker/bitcoin.conf` according to your environment
-(see [doc][bitcoin-conf]).
+Modify `docker/zcash.conf` according to your environment
+(see [doc][zcash-conf]).
 
 Configure `rpcallowip=...` to allow the client/daemon to accept
 RPC connections outside the localhost and set an RPC username (`rpcuser`)
@@ -23,7 +23,7 @@ Make sure your config file includes the following line:
 
 ## Usage
 
-Building the docker container (latest tagged GitHub version of Bitcoin):
+Building the docker container (latest tagged GitHub version of ZCash):
 
     ./docker/build.sh
 

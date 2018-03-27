@@ -1,1 +1,1 @@
-docker exec bitcoin bash -c "tail -f /root/.bitcoin/debug.log"
+docker exec zcash bash -c "tail -f /root/.zcash/debug.log"

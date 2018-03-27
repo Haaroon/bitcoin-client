@@ -1,6 +1,6 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="Bitcoin Daemon"
-NAME=bitcoind
+DESC="Zcash Daemon"
+NAME=zcashd
 DAEMON=/usr/local/bin/$NAME
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
