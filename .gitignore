@@ -63,3 +63,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# dont upload our configs
+zcash.conf
+docker/zcash.conf

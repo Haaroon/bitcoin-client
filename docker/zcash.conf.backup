@@ -69,8 +69,8 @@ server=1
 
 # You must set rpcuser and rpcpassword to secure the JSON-RPC api
 # CHANGE BELOW OR YOU WILL GET ROBBED
-rpcuser=zecuserouthere
-rpcpassword=<1ucantbruteforcememate3><3ucantbruteforcememate3><3ucantbruteforcememate7>
+rpcuser=1
+rpcpassword=1
 
 # How many seconds bitcoin will wait for a complete RPC HTTP request.
 # after the HTTP connection is established. 

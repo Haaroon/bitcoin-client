@@ -10,16 +10,16 @@ Install [Docker][docker], e.g. on Debian/Ubuntu based systems
 
 ## Configuration
 
-Modify `docker/zcash.conf` according to your environment
-(see [doc][zcash-conf]).
-
-Configure `rpcallowip=...` to allow the client/daemon to accept
+- Rename `docker/zcash.conf.backup` to `docker/zcash.conf`
+- Change the username and password
+- Configure `rpcallowip=...` to allow the client/daemon to accept
 RPC connections outside the localhost and set an RPC username (`rpcuser`)
 and password (`rpcpassword`).
-
-Make sure your config file includes the following line:
-
+- Make sure your config file includes the following line:
     txindex=1
+- Modify `docker/zcash.conf` according to your environment
+(see [doc][zcash-conf]).
+
 
 ## Usage
 
@@ -35,10 +35,10 @@ Attaching to the container:
 
     ./docker/attach.sh
 
-Showing the Bitcoin log file:
+Showing the Zcash log file:
 
     ./docker/show_log.sh
 
 
 [docker]: https://www.docker.com/
-[bitcoin-conf]: https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File
+[zcash-conf]: https://github.com/zcash/zcash/blob/master/contrib/debian/examples/zcash.conf
