@@ -40,5 +40,19 @@ Showing the Zcash log file:
     ./docker/show_log.sh
 
 
+# Exposed JSON RPC PORT
+
+By default this program will expose the RPC port `8331` of the ZCash node to the local machine running docker.
+
+Example of interaction using Pythons `python-bitcoinrpc` is below
+
+    from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
+    rpcuser="MyUserName"
+    rpcpassword="MyPassword"
+    rpcport=8331
+    rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:%i/" % (rpcuser, rpcpassword, port))
+    rpc_connection.getinfo()
+
+
 [docker]: https://www.docker.com/
 [zcash-conf]: https://github.com/zcash/zcash/blob/master/contrib/debian/examples/zcash.conf
