@@ -66,4 +66,3 @@ target/
 
 # dont upload our configs
 zcash.conf
-docker/zcash.conf

@@ -50,7 +50,7 @@ Example of interaction using Pythons `python-bitcoinrpc` is below
     rpcuser="MyUserName"
     rpcpassword="MyPassword"
     rpcport=8331
-    rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:%i/" % (rpcuser, rpcpassword, port))
+    rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:%i/" % (rpcuser, rpcpassword, rpcport))
     rpc_connection.getinfo()
 
 
